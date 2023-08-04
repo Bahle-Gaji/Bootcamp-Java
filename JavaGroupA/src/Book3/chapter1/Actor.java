@@ -15,5 +15,11 @@ public class Actor {
         this.goodActor = goodActor;
     }
 
+    public void printObject(){
+        System.out.println(this);
+    }
 
+    public String toString(){
+        return this.firstName + " " + this.lastName;
+    }
 }

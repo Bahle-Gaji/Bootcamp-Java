@@ -9,5 +9,8 @@ public class ActorApp {
         Actor actor2 = new Actor("Dwayne", "Johnson");
         System.out.println("The actor " + actor2.firstName + " " + actor2.lastName
                 + " is a good actor? " + actor2.goodActor + ".");
+
+        actor1.printObject();
+        actor2.printObject();
     }
 }
