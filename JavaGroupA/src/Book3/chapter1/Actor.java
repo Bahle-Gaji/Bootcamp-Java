@@ -20,6 +20,9 @@ public class Actor {
     }
 
     public String toString(){
-        return this.firstName + " " + this.lastName;
+        return "Actor = {\n"
+                + "firstName: " + this.firstName + ",\n"
+                + "lastName: " + this.lastName + "\n"
+                + "goodActor: " + this.goodActor + "\n}";
     }
 }
