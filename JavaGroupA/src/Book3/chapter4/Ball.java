@@ -11,8 +11,26 @@ public class Ball {
         this.weight = weight;
     }
 
-    public void hit(){
+    public void hit() {
         System.out.println("You hit it a mile!");
+    }
+
+}
+
+class BaseBall extends Ball {
+
+    public static void main(String[] args) {
+        BaseBall b1 = new BaseBall();
+        b1.hit();
+    }
+
+    public BaseBall() {
+        setWeight(5.125);
+    }
+
+    public void hit() {
+        System.out.println("You tore the cover off!");
+        super.hit();
     }
 }
 
