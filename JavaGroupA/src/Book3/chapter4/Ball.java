@@ -14,15 +14,15 @@ public class Ball {
     public void hit() {
         System.out.println("You hit it a mile!");
     }
+    public static void main(String[] args) {
+        BaseBall b1 = new BaseBall();
+        b1.hit();
+    }
 
 }
 
 class BaseBall extends Ball {
 
-    public static void main(String[] args) {
-        BaseBall b1 = new BaseBall();
-        b1.hit();
-    }
 
     public BaseBall() {
         setWeight(5.125);
