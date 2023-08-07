@@ -20,12 +20,16 @@ public class Ball2 {
         System.out.println("Hello from Ball2 constructor 3.");
     }
 
+    public String toString(){
+        return "Baseball weight: " + weight + " and height: " + height + "\n";
+    }
+
     public static void main(String[] args) {
         BaseBall2  b1 = new BaseBall2(7.65);
-        System.out.println("Baseball weight: " + b1.weight + " and height: " + b1.height + "\n");
+        System.out.println(b1);
 
         SoftBall b2 = new SoftBall(5.7, 8.6);
-        System.out.println("Softball weight: " + b2.weight +  " and height: " + b2.height);
+        System.out.println(b2);
     }
 }
 
