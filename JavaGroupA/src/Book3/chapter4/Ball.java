@@ -10,6 +10,10 @@ public class Ball {
     protected void setWeight(double weight) {
         this.weight = weight;
     }
+
+    public void hit(){
+        System.out.println("You hit it a mile!");
+    }
 }
 
 
