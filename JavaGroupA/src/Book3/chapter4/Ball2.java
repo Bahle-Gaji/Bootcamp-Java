@@ -2,26 +2,26 @@ package Book3.chapter4;
 
 public class Ball2 {
     public double weight;
-    public double height;
+    public double diameter;
     public Ball2(double weight) {
         this.weight = weight;
-        this.height = 6;
+        this.diameter = 6;
         System.out.println("Hello from the Ball2 constructor 1.");
     }
-    public Ball2(double weight, double height) {
+    public Ball2(double weight, double diameter) {
         this.weight = weight;
-        this.height = height;
+        this.diameter = diameter;
         System.out.println("Hello from the Ball2 constructor 2.");
     }
 
     public Ball2() {
         this.weight = 5;
-        this.height = 5;
+        this.diameter = 5;
         System.out.println("Hello from Ball2 constructor 3.");
     }
 
     public String toString(){
-        return "Baseball weight: " + weight + " and height: " + height + "\n";
+        return "Baseball weight: " + weight + " and diameter: " + diameter + "\n";
     }
 
     public static void main(String[] args) {
@@ -39,8 +39,8 @@ class BaseBall2 extends Ball2 {
         System.out.println("I am in the BaseBall2 constructor 1.");
     }
 
-    public BaseBall2(double weight, double height){
-        super(weight, height);
+    public BaseBall2(double weight, double diameter){
+        super(weight, diameter);
         System.out.println("I am in the BaseBall2 constructor 2.");
     }
 
@@ -56,8 +56,8 @@ class SoftBall extends Ball2 {
         System.out.println("I am in the SoftBall constructor 1.");
     }
 
-    public SoftBall(double weight, double height){
-        super(weight, height);
+    public SoftBall(double weight, double diameter){
+        super(weight, diameter);
         System.out.println("I am in the SoftBall constructor 2.");
     }
 
