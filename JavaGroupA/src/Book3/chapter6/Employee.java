@@ -27,13 +27,14 @@ public class Employee {
     }
 
     @Override
-    public boolean equals(Object emp){
-        if(emp == null){
+    public boolean equals(Object emp) {
+        if (this == emp) {
+            return true;
+        } else if (emp == null) {
             return false;
-        }
-        else if(emp instanceof Employee){
+        } else if (emp instanceof Employee) {
             Employee e = (Employee) emp;
-            return(this.firstName.equals(e.firstName) && this.lastName.equals(e.lastName));
+            return (this.firstName.equals(e.firstName) && this.lastName.equals(e.lastName));
         }
         return false;
     }
