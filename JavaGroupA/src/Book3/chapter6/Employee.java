@@ -57,4 +57,9 @@ public class Employee {
         return false;
     }
 
+    @Override
+    public Object clone() {
+        Employee emp = new Employee(this.firstName, this.lastName);
+        return emp;
+    }
 }
