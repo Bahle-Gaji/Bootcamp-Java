@@ -18,4 +18,23 @@ public class Employee {
                 '}';
     }
 
+    public String getFirstName() {
+        return this.firstName;
+    }
+
+    public String getLastName() {
+        return this.lastName;
+    }
+
+    @Override
+    public boolean equals(Object emp){
+        if(emp == null){
+            return false;
+        }
+        else if(emp instanceof Employee){
+            Employee e = (Employee) emp;
+            return(this.firstName.equals(e.firstName) && this.lastName.equals(e.lastName));
+        }
+        return false;
+    }
 }
