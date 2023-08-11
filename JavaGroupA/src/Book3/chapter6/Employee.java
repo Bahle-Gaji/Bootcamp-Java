@@ -4,10 +4,19 @@ public class Employee {
 
     private String firstName;
     private String lastName;
+    private Double salary;
 
     public Employee(String fName, String lName) {
         this.firstName = fName;
         this.lastName = lName;
+    }
+
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public Double getSalary() {
+        return this.salary;
     }
 
     @Override
@@ -22,9 +31,18 @@ public class Employee {
         return this.firstName;
     }
 
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
     public String getLastName() {
         return this.lastName;
     }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
 
     @Override
     public boolean equals(Object emp) {
@@ -38,4 +56,5 @@ public class Employee {
         }
         return false;
     }
+
 }
