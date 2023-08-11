@@ -6,8 +6,7 @@ public class CardDeck implements Dealable {
         System.out.println("Dealing out " + cards + " cards.");
     }
 
-    private static void startGame(Dealable deck, String game)
-    {
+    private static void startGame(Dealable deck, String game) {
         if (game.equals("Poker"))
             deck.deal(5);
         else if (game.equals("Hearts"))
@@ -17,8 +16,8 @@ public class CardDeck implements Dealable {
     }
 
     public static void main(String[] args) {
-        Dealable d = new CardDeck();
-        startGame(d, "Hearts");
-//        d.startgame(d, "Gin");        // Only works if method is static and d is type of CardDeck
+        CardDeck d = new CardDeck();
+//        startGame(d, "Hearts");
+//        d.startGame(d, "Gin");        // Only works if method is static and d is type of CardDeck
     }
 }
