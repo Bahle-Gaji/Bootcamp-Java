@@ -1,32 +1,16 @@
 package Book3.chapter6;
 
-import javax.swing.border.EmptyBorder;
-
 public class Employee implements Cloneable {
 
     private String firstName;
     private String lastName;
     private Double salary;
+    public Address address;
 
     public Employee(String fName, String lName) {
         this.firstName = fName;
         this.lastName = lName;
-    }
-
-    public void setSalary(Double salary) {
-        this.salary = salary;
-    }
-
-    public Double getSalary() {
-        return this.salary;
-    }
-
-    @Override
-    public String toString() {
-        return "Employee{" +
-                "firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                '}';
+        this.address = new Address();
     }
 
     public String getFirstName() {
@@ -45,6 +29,21 @@ public class Employee implements Cloneable {
         this.lastName = lastName;
     }
 
+    public void setSalary(Double salary) {
+        this.salary = salary;
+    }
+
+    public Double getSalary() {
+        return this.salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                '}';
+    }
 
     @Override
     public boolean equals(Object emp) {
@@ -64,8 +63,9 @@ public class Employee implements Cloneable {
         Employee emp;
         try {
             emp = (Employee) super.clone();
+            emp.address = (Address) address.clone();
         } catch (CloneNotSupportedException e) {
-            return null;
+            return null; // won't occur
         }
         return emp;
     }
