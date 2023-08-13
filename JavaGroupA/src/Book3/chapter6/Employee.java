@@ -1,6 +1,8 @@
 package Book3.chapter6;
 
-public class Employee {
+import javax.swing.border.EmptyBorder;
+
+public class Employee implements Cloneable {
 
     private String firstName;
     private String lastName;
@@ -59,7 +61,12 @@ public class Employee {
 
     @Override
     public Object clone() {
-        Employee emp = new Employee(this.firstName, this.lastName);
+        Employee emp;
+        try {
+            emp = (Employee) super.clone();
+        } catch (CloneNotSupportedException e) {
+            return null;
+        }
         return emp;
     }
 }
