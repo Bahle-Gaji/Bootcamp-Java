@@ -17,7 +17,7 @@ public class CardDeck implements Dealable {
 
     public static void main(String[] args) {
         CardDeck d = new CardDeck();
-//        startGame(d, "Hearts");
+        startGame(d, "Hearts");
 //        d.startGame(d, "Gin");        // Only works if method is static and d is type of CardDeck
     }
 }
