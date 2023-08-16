@@ -1,8 +1,9 @@
 package Book4.chapter2;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class Arrays {
+public class ArraysTest {
     static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -28,19 +29,25 @@ public class Arrays {
 //            System.out.println(numbers[i]);
 //        }
 
-        System.out.print("How many players? ");
-        int count = sc.nextInt();
-        sc.nextLine();
+//        System.out.print("How many players? ");
+//        int count = sc.nextInt();
+//        sc.nextLine();
+//
+//        String[] players = new String[count];
+//        for (int i = 0; i < count; i++)
+//        {
+//            System.out.print("Enter player name: ");
+//            players[i] = sc.nextLine();
+//        }
+//        System.out.println("Players are: ");
+//        for (int i = 0; i < count; i++){
+//            System.out.println(players[i]);
+//        }
 
-        String[] players = new String[count];
-        for (int i = 0; i < count; i++)
-        {
-            System.out.print("Enter player name: ");
-            players[i] = sc.nextLine();
-        }
-        System.out.println("Players are: ");
-        for (int i = 0; i < count; i++){
-            System.out.println(players[i]);
+        int[] startValues = new int[10];
+        Arrays.fill(startValues, 100);
+        for(int s : startValues){
+            System.out.println(s);
         }
     }
 }
