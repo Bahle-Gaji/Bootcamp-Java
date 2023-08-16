@@ -1,12 +1,17 @@
 package Book4.chapter2;
 
 public class EnhancedLoop {
-    static String[] days = {"Sunday", "Monday", "Tuesday",
-            "Wednesday", "Thursday", "Friday", "Saturday"};
 
     public static void main(String[] args) {
-        for(String day : days){
+        for(String day : getDaysOfWeek()){
             System.out.println(day);
         }
+    }
+
+    public static String[] getDaysOfWeek() {
+        String[] days = {"Sunday", "Monday", "Tuesday",
+                "Wednesday", "Thursday", "Friday", "Saturday"};
+
+        return days;
     }
 }
