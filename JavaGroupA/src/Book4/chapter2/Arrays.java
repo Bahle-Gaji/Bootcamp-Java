@@ -14,6 +14,19 @@ public class Arrays {
         String[] players = new String[count];
         System.out.println("There are " + players.length + " players.");
 
+        /* Initializing arrays */
+        String[] days = new String[7];
+        days[0] = "Sunday";
+        days[1] = "Monday";
+        days[2] = "Tuesday";
+        days[3] = "Wednesday";
+        days[4] = "Thursday";
+        days[5] = "Friday";
+        days[6] = "Saturday";       //adding elements one at a time
+
+        String[] days2 = {"Sunday", "Monday", "Tuesday",
+                "Wednesday", "Thursday", "Friday", "Saturday"};     //adding all the elements at once
+
     }
 }
 
