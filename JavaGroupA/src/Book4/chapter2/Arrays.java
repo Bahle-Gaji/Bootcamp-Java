@@ -42,7 +42,6 @@ public class Arrays {
         for (int i = 0; i < count; i++){
             System.out.println(players[i]);
         }
-
     }
 }
 
