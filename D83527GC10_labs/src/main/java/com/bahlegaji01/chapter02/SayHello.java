@@ -1,4 +1,4 @@
-package chapter02;
+package com.bahlegaji01.chapter02;
 
 public class SayHello {
 
