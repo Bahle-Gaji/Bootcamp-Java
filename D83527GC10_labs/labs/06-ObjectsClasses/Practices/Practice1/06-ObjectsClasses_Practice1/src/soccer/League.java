@@ -9,5 +9,17 @@ package soccer;
  * @author bahle
  */
 public class League {
+    public static void main(String[] args){
+        Player player1 = new Player();
+        player1.playerName = "George Elliot";
+        
+        Player player2 = new Player();
+        player2.playerName = "Graham Greene";
+        
+        Player player3 = new Player();
+        player3.playerName = "Geoffrty Chaucer";
+        
+        Player[] thePlayers = {player1, player2, player3};
+    }
     
 }
