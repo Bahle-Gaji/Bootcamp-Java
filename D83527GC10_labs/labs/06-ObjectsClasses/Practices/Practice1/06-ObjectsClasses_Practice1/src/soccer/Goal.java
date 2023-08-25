@@ -9,5 +9,7 @@ package soccer;
  * @author bahle
  */
 public class Goal {
-    
+    public Team theTeam;
+    public Player thePlayer;
+    double theTime;
 }
