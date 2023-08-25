@@ -24,6 +24,10 @@ public class League {
         Team team1 = new Team();
         team1.teamName = "The Greens";
         team1.playerArray = thePlayers;
+        
+        for (Player thePlayer : team1.playerArray){
+            System.out.println(thePlayer.playerName);
+        }
     }
     
 }
