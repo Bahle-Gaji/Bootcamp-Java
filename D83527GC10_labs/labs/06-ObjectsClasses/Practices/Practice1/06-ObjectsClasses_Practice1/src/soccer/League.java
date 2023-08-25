@@ -42,6 +42,10 @@ public class League {
         for (Player thePlayer : team1.playerArray) {
             System.out.println(thePlayer.playerName);
         }
+        
+        for (Player thePlayer : team2.playerArray) {
+            System.out.println(thePlayer.playerName);
+        }
     }
 
 }
