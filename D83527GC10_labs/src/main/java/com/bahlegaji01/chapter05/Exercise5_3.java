@@ -8,6 +8,7 @@ public class Exercise5_3 {
         double price = 21.99;
         int quantity = 2;
         double tax = 1.04;
+        double total = tax * price * quantity;
 
         String items[];
         items = new String[4];
@@ -26,6 +27,7 @@ public class Exercise5_3 {
             System.out.println("\t" + item);
         }
 
+        System.out.println("Total: R" + total);
     }
 
 }
