@@ -20,6 +20,10 @@ public class League {
         player3.playerName = "Geoffrty Chaucer";
         
         Player[] thePlayers = {player1, player2, player3};
+        
+        Team team1 = new Team();
+        team1.teamName = "The Greens";
+        team1.playerArray = thePlayers;
     }
     
 }
