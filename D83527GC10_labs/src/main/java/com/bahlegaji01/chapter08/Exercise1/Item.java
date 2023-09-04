@@ -14,11 +14,12 @@ public class Item {
 
     // declare and code the setColor method
     public boolean setColor(char crctr) {
-        if (crctr == ' '){
+        if (crctr == ' ') {
+            return false;
+        } else {
             this.color = crctr;
             return true;
-        } else {
-            return false;
+
         }
     }
 
