@@ -6,6 +6,8 @@
 
 package soccer;
 
+import utility.GameUtils;
+
 /**
  *
  * @author Administrator
@@ -17,6 +19,12 @@ public class Game {
     public Goal[] goals;
     
     /* Practice 8-2. Add playGame() method here */
+    public void playGame(){
+        int numberOfGoals = (int) (Math.random() * 7);
+        Goal[] theGoals = new Goal[numberOfGoals];
+        this.goals = theGoals;
+        GameUtils.addGameGoals(this);
+    }
     
     
     /* Practice 8-2. Add getDescription() method here */

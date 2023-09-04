@@ -27,15 +27,8 @@ public class League {
         //deleted
         /* Practice 8-2. End of code that creates a Goal and assigns to a Team and a Game */
         
+        currGame.playGame();
         
-        /* Practice 8-2. Add code to initialize the array currGame.goals to a random size */
-        int numberOfGoals = (int) (Math.random() * 7);
-        System.out.println(numberOfGoals);
-
-        Goal[] theGoals = new Goal[numberOfGoals];
-        currGame.goals = theGoals;
-        GameUtils.addGameGoals(currGame);
-
         for (Goal currGoal : currGame.goals) {
             // Print out goal details
             System.out.println("Goal scored after " +
