@@ -28,15 +28,7 @@ public class League {
         /* Practice 8-2. End of code that creates a Goal and assigns to a Team and a Game */
         
         currGame.playGame();
-        
-        for (Goal currGoal : currGame.goals) {
-            // Print out goal details
-            System.out.println("Goal scored after " +
-                    currGoal.theTime + " mins by " + 
-                    currGoal.thePlayer.playerName +
-                    " of " + currGoal.theTeam.teamName);
-        }
-
+        System.out.println(currGame.getDescription());
     }
 
     public static Team[] createTeams() {
