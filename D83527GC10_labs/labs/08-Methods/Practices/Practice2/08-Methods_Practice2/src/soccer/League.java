@@ -5,6 +5,8 @@
  */
 package soccer;
 
+import utility.GameUtils;
+
 /**
  *
  * @author Administrator
@@ -22,21 +24,25 @@ public class League {
         Game currGame = theGames[0];
 
         /* Practice 8-2. Start of code that creates a Goal and assigns to Team and a Game */
-        Goal goal1 = new Goal();
-        goal1.thePlayer = currGame.homeTeam.playerArray[2];
-        goal1.theTeam = currGame.homeTeam;
-        goal1.theTime = 55;
-        Goal[] theGoals = {goal1};
-        currGame.goals = theGoals;
+        //deleted
         /* Practice 8-2. End of code that creates a Goal and assigns to a Team and a Game */
         
-        /* Practice 8-2. Add code to initialize the array currGame.goals to a random size */
         
-        // Print out goal details
-        System.out.println("Goal scored after "
-                + currGame.goals[0].theTime + " mins by "
-                + currGame.goals[0].thePlayer.playerName + " of "
-                + currGame.goals[0].theTeam.teamName);
+        /* Practice 8-2. Add code to initialize the array currGame.goals to a random size */
+        int numberOfGoals = (int) (Math.random() * 7);
+        System.out.println(numberOfGoals);
+
+        Goal[] theGoals = new Goal[numberOfGoals];
+        currGame.goals = theGoals;
+        GameUtils.addGameGoals(currGame);
+
+        for (Goal currGoal : currGame.goals) {
+            // Print out goal details
+            System.out.println("Goal scored after " +
+                    currGoal.theTime + " mins by " + 
+                    currGoal.thePlayer.playerName +
+                    " of " + currGoal.theTeam.teamName);
+        }
 
     }
 
