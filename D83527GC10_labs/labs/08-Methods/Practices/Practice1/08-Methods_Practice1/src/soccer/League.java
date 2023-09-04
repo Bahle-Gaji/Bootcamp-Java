@@ -68,5 +68,12 @@ public class League {
     }
 
     /* Practice 8-1. Add new static method createGames() here */
- 
+    public Game[] createGames(Team[] theTeams){
+        Game theGame = new Game();
+        theGame.homeTeam = theTeams[0];
+        theGame.awayTeam = theTeams[1];
+        
+        Game[] theGames = {theGame};
+        return theGames;
+    }
 }
