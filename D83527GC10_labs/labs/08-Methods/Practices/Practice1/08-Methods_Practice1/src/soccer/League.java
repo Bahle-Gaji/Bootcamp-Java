@@ -17,12 +17,16 @@ public class League {
     public static void main(String[] args) {
 
         /* Practice 8-1. Start of code that builds teams */
- /* Practice 8-1. End of code that builds teams */
- /* Practice 8-1. Delete next three lines */
-        Game currGame = new Game();
-        currGame.homeTeam = team1;
-        currGame.awayTeam = team2;
-
+        Team[] theTeams = createTeams();
+        Game[] theGames = createGames(theTeams);
+        /* Practice 8-1. End of code that builds teams */
+        
+        
+        /* Practice 8-1. Delete next three lines */
+        //deleted
+        
+        Game currGame = theGames[0];        //create current game, referencing theGame
+        
         Goal goal1 = new Goal();
         goal1.thePlayer = currGame.homeTeam.playerArray[2];
         goal1.theTeam = currGame.homeTeam;
@@ -68,11 +72,11 @@ public class League {
     }
 
     /* Practice 8-1. Add new static method createGames() here */
-    public Game[] createGames(Team[] theTeams){
+    public static Game[] createGames(Team[] theTeams) {
         Game theGame = new Game();
-        theGame.homeTeam = theTeams[0];
-        theGame.awayTeam = theTeams[1];
-        
+        theGame.homeTeam = theTeams[1];
+        theGame.awayTeam = theTeams[0];
+
         Game[] theGames = {theGame};
         return theGames;
     }
