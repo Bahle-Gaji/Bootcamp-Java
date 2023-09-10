@@ -33,12 +33,12 @@ public class League {
 
     public Team[] createTeams() {
 
-        Player player1 = new Player();
-        player1.setPlayerName("George Eliot");
-        Player player2 = new Player();
-        player2.setPlayerName("Graham Greene");
-        Player player3 = new Player();
-        player3.setPlayerName("Geoffrey Chaucer");
+        Player player1 = new Player("George Eliot");
+//        player1.setPlayerName("George Eliot");
+        Player player2 = new Player("Graham Greene");
+//        player2.setPlayerName("Graham Greene");
+        Player player3 = new Player("Geoffrey Chaucer");
+//        player3.setPlayerName("Geoffrey Chaucer");
         Player[] thePlayers = {player1, player2, player3};
 
         Team team1 = new Team();
