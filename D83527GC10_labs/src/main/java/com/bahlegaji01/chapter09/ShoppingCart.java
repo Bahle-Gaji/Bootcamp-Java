@@ -8,7 +8,7 @@ public class ShoppingCart {
         Customer customer1 = new Customer("Leonard", "12345");
 
 	// Print the customer object name
+        System.out.println(customer1.getName());
 
-        
     }
 }
