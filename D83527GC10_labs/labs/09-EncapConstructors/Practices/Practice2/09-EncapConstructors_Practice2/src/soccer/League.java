@@ -34,18 +34,14 @@ public class League {
     public Team[] createTeams() {
 
         Player player1 = new Player("George Eliot");
-//        player1.setPlayerName("George Eliot");
         Player player2 = new Player("Graham Greene");
-//        player2.setPlayerName("Graham Greene");
         Player player3 = new Player("Geoffrey Chaucer");
-//        player3.setPlayerName("Geoffrey Chaucer");
         Player[] thePlayers = {player1, player2, player3};
 
-        Team team1 = new Team();
+        Team team1 = new Team("The Greens", thePlayers);
         /* Practice 9-2. The following two lines can be removed after the line above has been
            modified to pass parameters to the constructor of Team */
-        team1.setTeamName("The Greens");
-        team1.setPlayerArray(thePlayers);
+        //Deleted
 
         // Create team2
         Team team2 = new Team();
@@ -63,9 +59,7 @@ public class League {
     }
 
     public Game[] createGames(Team[] theTeams) {
-        Game theGame = new Game();
-        theGame.setHomeTeam(theTeams[0]);
-        theGame.setAwayTeam(theTeams[1]);
+        Game theGame = new Game(theTeams[0], theTeams[1]);
         Game[] theGames = {theGame};
         return theGames;
     }
