@@ -60,7 +60,12 @@ public class League {
 
     public Game[] createGames(Team[] theTeams) {
         Game theGame = new Game(theTeams[0], theTeams[1]);
-        Game[] theGames = {theGame};
+        Game theGame2 = new Game(theTeams[1], theTeams[0]);
+        Game theGame3 = new Game(theTeams[0], theTeams[1]);
+        Game theGame4 = new Game(theTeams[1], theTeams[0]);
+        
+        Game[] theGames = {theGame, theGame2, theGame3, theGame4};
+        
         return theGames;
     }
 
