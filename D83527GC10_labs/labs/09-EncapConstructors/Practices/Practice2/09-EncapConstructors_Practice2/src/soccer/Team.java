@@ -24,6 +24,8 @@ public class Team {
         this(teamName);
         this.playerArray = playerArray;
     }
+    
+    public Team(){}
 
     /**
      * @return the teamName
