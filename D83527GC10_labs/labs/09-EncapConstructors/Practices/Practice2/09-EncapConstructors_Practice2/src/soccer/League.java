@@ -5,8 +5,6 @@
  */
 package soccer;
 
-
-
 /**
  *
  * @author Administrator
@@ -17,18 +15,17 @@ public class League {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+
         League theLeague = new League();
 
         Team[] theTeams = theLeague.createTeams();
         Game[] theGames = theLeague.createGames(theTeams);
 
-        Game currGame = theGames[0];
-        
-        currGame.playGame();
-        
-        System.out.println(currGame.getDescription());
+        for (Game currGame : theGames) {
+            currGame.playGame();
+            System.out.println(currGame.getDescription());
 
+        }
     }
 
     public Team[] createTeams() {
@@ -63,9 +60,9 @@ public class League {
         Game theGame2 = new Game(theTeams[1], theTeams[0]);
         Game theGame3 = new Game(theTeams[0], theTeams[1]);
         Game theGame4 = new Game(theTeams[1], theTeams[0]);
-        
+
         Game[] theGames = {theGame, theGame2, theGame3, theGame4};
-        
+
         return theGames;
     }
 
