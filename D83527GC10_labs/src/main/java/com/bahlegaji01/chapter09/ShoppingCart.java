@@ -1,4 +1,4 @@
-package ex09_2_exercise;
+package com.bahlegaji01.chapter09;
 
 
 public class ShoppingCart {
