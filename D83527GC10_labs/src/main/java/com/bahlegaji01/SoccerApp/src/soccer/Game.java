@@ -68,6 +68,8 @@ public class Game {
         }
         
         /* Practice 10-1. Add returnString.append() that shows score */
+        returnString.append(" ("+ homeTeamGoals + " - " + awayTeamGoals + ") \n");
+
         
         return returnString.toString();
     }
