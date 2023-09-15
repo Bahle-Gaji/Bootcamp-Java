@@ -62,10 +62,14 @@ public class Game {
         /* Practice 10-1. Add if block here */
         if(homeTeamGoals == awayTeamGoals ){
             returnString.append("It's a draw!");
+            homeTeam.incPointsTotal(1);
+            awayTeam.incPointsTotal(1);
         }else if(homeTeamGoals > awayTeamGoals){
             returnString.append(homeTeam.getTeamName() + " win!");
+            homeTeam.incPointsTotal(2);
         }else{
             returnString.append(awayTeam.getTeamName() + " win!");
+            awayTeam.incPointsTotal(2);
         }
         
         /* Practice 10-1. Add returnString.append() that shows score */
