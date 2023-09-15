@@ -36,7 +36,6 @@ public class Game {
 
     public String getDescription() {
 
-        /* Practice 10-1. Declare two int variables here */
         int homeTeamGoals = 0;
         int awayTeamGoals = 0;
 
