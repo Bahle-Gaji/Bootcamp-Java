@@ -68,7 +68,7 @@ public class Team {
      * 
      * @return the pointTotal
      */
-    public int getPointTotal() {
+    public int getPointsTotal() {
         return pointsTotal;
     }
 
@@ -76,7 +76,7 @@ public class Team {
      * 
      * @param pointsTotal the pointTotal to set
      */
-    public void setPointTotal(int pointsTotal) {
+    public void setPointsTotal(int pointsTotal) {
         this.pointsTotal = pointsTotal;
     }
     
