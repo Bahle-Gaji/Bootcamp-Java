@@ -12,6 +12,8 @@ public class Customer {
         this.ssn = ssn;
     }
     
+    public Customer(){}
+    
     //Ex 9-1
     // Encapsulate this class.  Make ssn read only.
     public String getName() {
