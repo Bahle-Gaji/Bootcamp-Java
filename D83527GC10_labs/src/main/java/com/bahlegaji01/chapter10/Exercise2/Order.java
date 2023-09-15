@@ -38,7 +38,7 @@ public class Order {
                 discount = 0.00;
             }
         } else if (custType == CORP) {
-            if (total < 900.00) {
+            if (total < 500.00) {
                 discount = 8.00;
             } else {
                 discount = 5.00;
