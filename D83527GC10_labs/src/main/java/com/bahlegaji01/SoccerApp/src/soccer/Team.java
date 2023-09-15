@@ -21,7 +21,7 @@ public class Team {
     
     /* Practice 10-1. Add incPointsTotal() method here */
     public void incPointsTotal( int pointTotal){
-        this.pointsTotal += pointsTotal;
+        this.pointsTotal += pointTotal;
     }
     
 
