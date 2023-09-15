@@ -63,10 +63,15 @@ public class League {
 
     /* Practice 10-1. Add showBestTeam() method here */
     public void showBestTeam(Team[] theTeams) {
+        Team currBestTeam = theTeams[0];
+
         System.out.println("\nTeam Points");
         for(Team currTeam : theTeams){
-            System.out.println(currTeam.getTeamName() + ": " + currTeam.getPointTotal());
+            System.out.println(currTeam.getTeamName() + ": " + currTeam.getPointsTotal());
+            currBestTeam = currTeam.getPointsTotal() > currBestTeam.getPointsTotal() ? currTeam : currBestTeam;
         }
+
+        System.out.println("Winner of the League is " + currBestTeam.getTeamName());
     }
 
 }
