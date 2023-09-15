@@ -43,6 +43,7 @@ public class Game {
         StringBuilder returnString = new StringBuilder();
         
         /* Practice 10-1. Add code to show teams that are playing */
+        returnString.append(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n");
         
         for (Goal currGoal: this.getGoals()) {
             
