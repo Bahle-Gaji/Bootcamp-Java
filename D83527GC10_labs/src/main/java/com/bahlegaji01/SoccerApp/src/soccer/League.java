@@ -5,6 +5,7 @@
  */
 package com.bahlegaji01.SoccerApp.src.soccer;
 
+import java.time.LocalDateTime;
 import java.util.*;
 
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
@@ -53,7 +54,7 @@ public class League {
         for (Team homeTeam : theTeams) {
             for (Team awayTeam : theTeams) {
                 if (homeTeam != awayTeam) {
-                    theGames.add(new Game(homeTeam, awayTeam));
+                    theGames.add(new Game(homeTeam, awayTeam, LocalDateTime.now()));
                 }
             }
         }
