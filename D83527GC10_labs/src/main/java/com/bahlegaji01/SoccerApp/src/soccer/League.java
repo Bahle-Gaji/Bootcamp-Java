@@ -22,7 +22,7 @@ public class League {
 
         League theLeague = new League();
 
-        Team[] theTeams = theLeague.createTeams();
+        Team[] theTeams = theLeague.createTeams("The Robins,The Crows,The Swallows", 3);
         Game[] theGames = theLeague.createGames(theTeams);
 
         for (Game currGame : theGames) {
@@ -43,7 +43,7 @@ public class League {
         for(int i = 0; i < theTeams.length; i++){
             theTeams[i] = new Team(teamNameTokens.nextToken(), playerDB.getTeam(teamSize));
         }
-        
+
         return theTeams;
     }
 
