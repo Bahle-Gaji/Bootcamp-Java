@@ -5,7 +5,7 @@
  */
 package com.bahlegaji01.SoccerApp.src.soccer;
 
-import java.util.StringTokenizer;
+import java.util.*;
 
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
 
@@ -39,8 +39,8 @@ public class League {
         PlayerDatabase playerDB = new PlayerDatabase();
         StringTokenizer teamNameTokens = new StringTokenizer(teamNames, ",");
         Team[] theTeams = new Team[teamNameTokens.countTokens()];
-        
-        for(int i = 0; i < theTeams.length; i++){
+
+        for (int i = 0; i < theTeams.length; i++) {
             theTeams[i] = new Team(teamNameTokens.nextToken(), playerDB.getTeam(teamSize));
         }
 
@@ -48,12 +48,17 @@ public class League {
     }
 
     public Game[] createGames(Team[] theTeams) {
-        Game theGame = new Game(theTeams[0], theTeams[1]);
-        Game theGame2 = new Game(theTeams[1], theTeams[0]);
-        Game theGame3 = new Game(theTeams[0], theTeams[1]);
-        Game theGame4 = new Game(theTeams[1], theTeams[0]);
-        Game[] theGames = { theGame, theGame2, theGame3, theGame4 };
-        return theGames;
+        ArrayList<Game> theGames = new ArrayList();
+
+        for (Team homeTeam : theTeams) {
+            for (Team awayTeam : theTeams) {
+                if (homeTeam != awayTeam) {
+                    theGames.add(new Game(homeTeam, awayTeam));
+                }
+            }
+        }
+
+        return (Game[]) theGames.toArray(new Game[1]);
     }
 
     public void showBestTeam(Team[] theTeams) {
