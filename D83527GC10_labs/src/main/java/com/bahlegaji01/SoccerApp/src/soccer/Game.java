@@ -21,7 +21,7 @@ public class Game {
     private Goal[] goals;
     private LocalDateTime theDateTime;
 
-    public Game(Team homeTeam, Team awayTeam, LocalDateTime thDateTime) {
+    public Game(Team homeTeam, Team awayTeam, LocalDateTime theDateTime) {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.theDateTime = theDateTime;
@@ -47,7 +47,8 @@ public class Game {
         StringBuilder returnString = new StringBuilder();
 
         returnString.append(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n"
-                + "Date " + this.theDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE));
+                + "Date " + this.getTheDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE) + "\n");
+
 
         for (Goal currGoal : this.getGoals()) {
 
