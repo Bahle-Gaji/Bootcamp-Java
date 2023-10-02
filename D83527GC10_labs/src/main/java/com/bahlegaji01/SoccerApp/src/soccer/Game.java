@@ -7,6 +7,7 @@
 package com.bahlegaji01.SoccerApp.src.soccer;
 
 import com.bahlegaji01.SoccerApp.src.utility.GameUtils;
+import java.time.*;
 
 /**
  *
@@ -17,10 +18,13 @@ public class Game {
     private Team homeTeam;
     private Team awayTeam;
     private Goal[] goals;
+    private LocalDateTime theDateTime;
 
-    public Game(Team homeTeam, Team awayTeam) {
+    public Game(Team homeTeam, Team awayTeam, LocalDateTime thDateTime) {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
+        this.theDateTime = theDateTime;
+        
     }
 
     public void playGame(int maxGoals) {
@@ -120,4 +124,11 @@ public class Game {
         this.goals = goals;
     }
 
+    public LocalDateTime getTheDateTime() {
+        return theDateTime;
+    }
+
+    public void setTheDateTime(LocalDateTime theDateTime) {
+        this.theDateTime = theDateTime;
+    }
 }
