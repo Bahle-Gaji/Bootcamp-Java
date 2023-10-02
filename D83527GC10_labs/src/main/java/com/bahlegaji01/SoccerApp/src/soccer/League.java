@@ -6,6 +6,7 @@
 package com.bahlegaji01.SoccerApp.src.soccer;
 
 import java.time.LocalDateTime;
+import java.time.Period;
 import java.util.*;
 
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
@@ -25,6 +26,8 @@ public class League {
 
         Team[] theTeams = theLeague.createTeams("The Robins,The Crows,The Swallows", 3);
         Game[] theGames = theLeague.createGames(theTeams);
+
+        System.out.println(theLeague.getLeagueAnnouncement(theGames));
 
         for (Game currGame : theGames) {
             currGame.playGame();
@@ -83,6 +86,14 @@ public class League {
         }
 
         System.out.println("Winner of the League is " + currBestTeam.getTeamName());
+    }
+
+    public String getLeagueAnnouncement(Game[] theGames) {
+        Period thePeriod = Period.between(theGames[0].getTheDateTime().toLocalDate(),
+                theGames[theGames.length - 1].getTheDateTime().toLocalDate());
+
+        return " The League is scheduled to run for " + thePeriod.getMonths() +
+                " month(s) and " + thePeriod.getDays() + " day(s) \n";
     }
 
 }
