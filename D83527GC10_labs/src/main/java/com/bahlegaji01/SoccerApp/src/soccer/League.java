@@ -5,6 +5,8 @@
  */
 package com.bahlegaji01.SoccerApp.src.soccer;
 
+import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
+
 /**
  *
  * @author Administrator
@@ -32,22 +34,10 @@ public class League {
     }
 
     public Team[] createTeams() {
+        PlayerDatabase playerDB = new PlayerDatabase();
 
-        Player player1 = new Player("George Eliot");
-        Player player2 = new Player("Graham Greene");
-        Player player3 = new Player("Geoffrey Chaucer");
-        Player[] thePlayers = { player1, player2, player3 };
-
-        Team team1 = new Team("The Greens", thePlayers);
-
-        // Create team2
-        Team team2 = new Team();
-        team2.setTeamName("The Reds");
-        team2.setPlayerArray(new Player[3]);
-        team2.getPlayerArray()[0] = new Player("Robert Service");
-        team2.getPlayerArray()[1] = new Player("Robbie Burns");
-        team2.getPlayerArray()[2] = new Player("Rafael Sabatini");
-
+        Team team1 = new Team("The Greens", playerDB.getTeam(3));
+        Team team2 = new Team("The Reds", playerDB.getTeam(3));
         Team[] theTeams = { team1, team2 };
         return theTeams;
     }
@@ -65,13 +55,14 @@ public class League {
         Team currBestTeam = theTeams[0];
 
         System.out.println("\nTeam Points");
-        for(Team currTeam : theTeams){
-            System.out.println(currTeam.getTeamName() + ": " + currTeam.getPointsTotal() + ": " + currTeam.getGoalsTotal());
-            
-            if(currTeam.getPointsTotal() > currBestTeam.getPointsTotal()){
+        for (Team currTeam : theTeams) {
+            System.out.println(
+                    currTeam.getTeamName() + ": " + currTeam.getPointsTotal() + ": " + currTeam.getGoalsTotal());
+
+            if (currTeam.getPointsTotal() > currBestTeam.getPointsTotal()) {
                 currBestTeam = currTeam;
-            }else if(currTeam.getPointsTotal() == currBestTeam.getPointsTotal()){
-                if(currTeam.getGoalsTotal() > currBestTeam.getGoalsTotal()){
+            } else if (currTeam.getPointsTotal() == currBestTeam.getPointsTotal()) {
+                if (currTeam.getGoalsTotal() > currBestTeam.getGoalsTotal()) {
                     currBestTeam = currTeam;
                 }
             }
