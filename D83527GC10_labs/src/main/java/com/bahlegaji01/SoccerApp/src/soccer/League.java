@@ -49,12 +49,15 @@ public class League {
     }
 
     public Game[] createGames(Team[] theTeams) {
+        int daysBetweenGames = 0;
+
         ArrayList<Game> theGames = new ArrayList();
 
         for (Team homeTeam : theTeams) {
             for (Team awayTeam : theTeams) {
                 if (homeTeam != awayTeam) {
-                    theGames.add(new Game(homeTeam, awayTeam, LocalDateTime.now()));
+                    daysBetweenGames += 7;
+                    theGames.add(new Game(homeTeam, awayTeam, LocalDateTime.now().plusDays(daysBetweenGames)));
                 }
             }
         }
