@@ -8,6 +8,7 @@ package com.bahlegaji01.SoccerApp.src.soccer;
 
 import com.bahlegaji01.SoccerApp.src.utility.GameUtils;
 import java.time.*;
+import java.time.format.DateTimeFormatter;
 
 /**
  *
@@ -24,7 +25,7 @@ public class Game {
         this.homeTeam = homeTeam;
         this.awayTeam = awayTeam;
         this.theDateTime = theDateTime;
-        
+
     }
 
     public void playGame(int maxGoals) {
@@ -45,14 +46,15 @@ public class Game {
 
         StringBuilder returnString = new StringBuilder();
 
-        returnString.append(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n");
+        returnString.append(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n"
+                + "Date " + this.theDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE));
 
         for (Goal currGoal : this.getGoals()) {
 
             if (currGoal.getTheTeam() == homeTeam) {
                 homeTeamGoals++;
                 homeTeam.incGoalsTotal(1);
-                
+
             } else {
                 awayTeamGoals++;
                 awayTeam.incGoalsTotal(1);
