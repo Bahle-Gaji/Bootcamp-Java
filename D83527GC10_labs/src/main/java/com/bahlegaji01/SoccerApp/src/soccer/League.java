@@ -5,6 +5,8 @@
  */
 package com.bahlegaji01.SoccerApp.src.soccer;
 
+import java.util.StringTokenizer;
+
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
 
 /**
@@ -33,12 +35,15 @@ public class League {
 
     }
 
-    public Team[] createTeams() {
+    public Team[] createTeams(String teamNames, int teamSize) {
         PlayerDatabase playerDB = new PlayerDatabase();
-
-        Team team1 = new Team("The Greens", playerDB.getTeam(3));
-        Team team2 = new Team("The Reds", playerDB.getTeam(3));
-        Team[] theTeams = { team1, team2 };
+        StringTokenizer teamNameTokens = new StringTokenizer(teamNames, ",");
+        Team[] theTeams = new Team[teamNameTokens.countTokens()];
+        
+        for(int i = 0; i < theTeams.length; i++){
+            theTeams[i] = new Team(teamNameTokens.nextToken(), playerDB.getTeam(teamSize));
+        }
+        
         return theTeams;
     }
 
