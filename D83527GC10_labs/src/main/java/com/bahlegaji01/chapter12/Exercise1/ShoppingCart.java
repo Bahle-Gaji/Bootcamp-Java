@@ -5,7 +5,6 @@ public class ShoppingCart {
 
         // instantiate a Shirt object and call display() on the object reference
      
-            
         }
     
 }
