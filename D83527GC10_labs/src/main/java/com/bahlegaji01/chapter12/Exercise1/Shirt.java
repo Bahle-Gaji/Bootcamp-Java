@@ -1,6 +1,6 @@
 package com.bahlegaji01.chapter12.Exercise1;
 
-public class Shirt extends Item{
+public class Shirt extends Item {
     private String size;
     private char colorCode;
 
