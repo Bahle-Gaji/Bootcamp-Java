@@ -9,6 +9,7 @@ package com.bahlegaji01.SoccerApp.src.soccer;
 import com.bahlegaji01.SoccerApp.src.utility.GameUtils;
 import java.time.*;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 
 /**
  *
@@ -36,7 +37,16 @@ public class Game {
     }
 
     public void playGame() {
-        playGame(6);
+        ArrayList<Goal> eventList = new ArrayList();
+        Goal currEvent;
+
+        for (int i = 1; i <= 90; i++) {
+            if(Math.random() > 0.95){
+                // System.out.println(i);
+                currEvent = new Goal();
+                currEvent.setTheTeam(Math.random() > 0.5 ? homeTeam: awayTeam);
+            }
+        }
     }
 
     public String getDescription() {
