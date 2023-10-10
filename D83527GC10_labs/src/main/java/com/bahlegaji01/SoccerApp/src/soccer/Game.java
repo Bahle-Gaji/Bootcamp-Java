@@ -45,7 +45,7 @@ public class Game {
             }
         }
 
-        this.gameEvents = new Goal[eventList.size()];
+        this.gameEvents = new GameEvent[eventList.size()];
         eventList.toArray(gameEvents);
     }
 
@@ -70,7 +70,7 @@ public class Game {
                 awayTeam.incGoalsTotal(1);
             }
 
-            returnString.append("GameEvent scored after "
+            returnString.append(currEvent + "after "
                     + currEvent.getTheTime() + " mins by "
                     + currEvent.getThePlayer().getPlayerName() + " of "
                     + currEvent.getTheTeam().getTeamName() +
