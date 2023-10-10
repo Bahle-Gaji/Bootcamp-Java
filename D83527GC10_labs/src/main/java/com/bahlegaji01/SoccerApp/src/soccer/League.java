@@ -31,11 +31,10 @@ public class League {
 
         for (Game currGame : theGames) {
             currGame.playGame();
-            System.out.println(currGame.getDescription());
+            break;
+            // System.out.println(currGame.getDescription());
         }
-
-        /* Practice 10-1. Add a call to showBestTeam() method here */
-        theLeague.showBestTeam(theTeams);
+        // theLeague.showBestTeam(theTeams);
 
     }
 
