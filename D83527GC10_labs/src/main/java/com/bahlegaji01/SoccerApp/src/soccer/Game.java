@@ -40,13 +40,20 @@ public class Game {
         ArrayList<Goal> eventList = new ArrayList();
         Goal currEvent;
         for (int i = 1; i < 90; i++) {
-            if(Math.random() > 0.95){
+            if (Math.random() > 0.95) {
                 // System.out.println(i);
                 currEvent = new Goal();
-                currEvent.setTheTeam(Math.random() > 0.5 ? homeTeam: awayTeam);
-                currEvent.setThePlayer(currEvent.getTheTeam().getPlayerArray()[(int) Math.random() * currEvent.getTheTeam().getPlayerArray().length]);
+                currEvent.setTheTeam(Math.random() > 0.5 ? homeTeam : awayTeam);
+                currEvent.setThePlayer(currEvent.getTheTeam().getPlayerArray()[(int) Math.random()
+                        * currEvent.getTheTeam().getPlayerArray().length]);
+                currEvent.setTheTime(i);
+                eventList.add(currEvent);
+
             }
         }
+
+        this.goals = new Goal[eventList.size()];
+        eventList.toArray(goals);
     }
 
     public String getDescription() {
@@ -58,7 +65,6 @@ public class Game {
 
         returnString.append(homeTeam.getTeamName() + " vs " + awayTeam.getTeamName() + "\n"
                 + "Date " + this.getTheDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE) + "\n");
-
 
         for (Goal currGoal : this.getGoals()) {
 
