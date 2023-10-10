@@ -39,8 +39,7 @@ public class Game {
     public void playGame() {
         ArrayList<Goal> eventList = new ArrayList();
         Goal currEvent;
-
-        for (int i = 1; i <= 90; i++) {
+        for (int i = 1; i < 90; i++) {
             if(Math.random() > 0.95){
                 // System.out.println(i);
                 currEvent = new Goal();
