@@ -35,7 +35,7 @@ public class Game {
         for (int i = 1; i < 90; i++) {
             if (Math.random() > 0.95) {
                 // System.out.println(i);
-                currEvent = new Goal();
+                currEvent = Math.random() > 0.6 ? new Goal() : new Possession();
                 currEvent.setTheTeam(Math.random() > 0.5 ? homeTeam : awayTeam);
                 currEvent.setThePlayer(currEvent.getTheTeam().getPlayerArray()[(int) Math.random()
                         * currEvent.getTheTeam().getPlayerArray().length]);
