@@ -44,6 +44,7 @@ public class Game {
                 // System.out.println(i);
                 currEvent = new Goal();
                 currEvent.setTheTeam(Math.random() > 0.5 ? homeTeam: awayTeam);
+                currEvent.setThePlayer(currEvent.getTheTeam().getPlayerArray()[(int) Math.random() * currEvent.getTheTeam().getPlayerArray().length]);
             }
         }
     }
