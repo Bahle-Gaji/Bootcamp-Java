@@ -8,7 +8,6 @@ package com.bahlegaji01.SoccerApp.src.soccer;
 import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.*;
-import java.util.ArrayList;
 
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
 
@@ -89,17 +88,21 @@ public class League {
                 " month(s) and " + thePeriod.getDays() + " day(s) \n";
     }
 
-    public void showBestPlayers(Team[] theTeams){
+    public void showBestPlayers(Team[] theTeams) {
         ArrayList<Player> thePlayers = new ArrayList();
-        for(Team currTeam: theTeams){
+        for (Team currTeam : theTeams) {
             thePlayers.addAll(Arrays.asList(currTeam.getPlayerArray()));
         }
+        Collections.sort(thePlayers,
+                (p1, p2) -> Double.valueOf(p2.getGoalsScored()).compareTo
+                    (Double.valueOf(p1.getGoalsScored()))
+                );
 
         System.out.println("\n\nBest Players");
 
-        for(Player currPlayer : thePlayers){
+        for (Player currPlayer : thePlayers) {
             System.out.println(currPlayer.getPlayerName() + " : " + currPlayer.getGoalsScored());
-        } 
+        }
     }
 
 }
