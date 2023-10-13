@@ -5,12 +5,13 @@
  */
 
 package com.bahlegaji01.SoccerApp.src.soccer;
+import java.lang.Comparable;
 
 /**
  *
  * @author Administrator
  */
-public class Team {
+public class Team implements Comparable {
     
     private String teamName;
     private Player[] playerArray;
@@ -37,6 +38,16 @@ public class Team {
     }
     
     public Team() {}
+
+    public int compareTo(Object theTeam){
+        int returnValue = -1;
+
+        if(this.getPointsTotal() < ((Team)theTeam).getPointsTotal()){
+            returnValue = 1;
+        }
+
+        return returnValue;
+    }
 
     /**
      * @return the teamName
