@@ -71,6 +71,8 @@ public class Game {
                 }
             }
 
+            currEvent.getThePlayer().incGoalsScored();
+
             returnString.append(currEvent + " after "
                     + currEvent.getTheTime() + " mins by "
                     + currEvent.getThePlayer().getPlayerName() + " of "
