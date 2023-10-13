@@ -6,7 +6,6 @@
 
 package com.bahlegaji01.SoccerApp.src.soccer;
 
-
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -60,17 +59,19 @@ public class Game {
                 + "Date " + this.getTheDateTime().format(DateTimeFormatter.ISO_LOCAL_DATE) + "\n");
 
         for (GameEvent currEvent : this.getGoals()) {
+            if (currEvent instanceof Goal) {
 
-            if (currEvent.getTheTeam() == homeTeam) {
-                homeTeamGoals++;
-                homeTeam.incGoalsTotal(1);
+                if (currEvent.getTheTeam() == homeTeam) {
+                    homeTeamGoals++;
+                    homeTeam.incGoalsTotal(1);
 
-            } else {
-                awayTeamGoals++;
-                awayTeam.incGoalsTotal(1);
+                } else {
+                    awayTeamGoals++;
+                    awayTeam.incGoalsTotal(1);
+                }
             }
-
-            returnString.append(currEvent + "after "
+            
+            returnString.append(currEvent + " after "
                     + currEvent.getTheTime() + " mins by "
                     + currEvent.getThePlayer().getPlayerName() + " of "
                     + currEvent.getTheTeam().getTeamName() +
