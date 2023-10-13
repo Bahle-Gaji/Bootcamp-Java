@@ -10,6 +10,7 @@ public class ShoppingCart {
         ShoppingCart cart = new ShoppingCart();
         cart.fillCart();
         cart.removeItemFromCart("Trousers");
+        
     }
 
     public void fillCart() {
@@ -21,7 +22,8 @@ public class ShoppingCart {
 
     public void removeItemFromCart(String desc) {
         // remove all Trousers from the items list, then print out the list
-
+        items.removeIf(item -> item.getDesc().equals(desc));
+        System.out.println("Cart without Trousers: " + items );
     }
 
 }
