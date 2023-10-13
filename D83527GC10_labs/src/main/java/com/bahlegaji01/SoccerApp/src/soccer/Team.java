@@ -44,6 +44,10 @@ public class Team implements Comparable {
 
         if(this.getPointsTotal() < ((Team)theTeam).getPointsTotal()){
             returnValue = 1;
+        } else if(this.getPointsTotal() == ((Team)theTeam).getPointsTotal()){
+            if(this.getGoalsTotal() < ((Team)theTeam).getGoalsTotal()){
+                returnValue = 1;
+            }
         }
 
         return returnValue;
