@@ -29,13 +29,18 @@ public class PlayerDatabase {
     }
 
     /* Practice 11-2. Add getTeam() method here */
-    public Player[] getTeam(int numberOfPlayers) {
+    public Player[] getTeam(int numberOfPlayers) throws PlayerDatabaseException {
         Player[] teamPlayers = new Player[numberOfPlayers];
 
         for (int i = 0; i < numberOfPlayers; i++) {
             int playerIndex = (int) (Math.random() * players.size());
-            teamPlayers[i] = players.get(playerIndex);
-            players.remove(playerIndex);
+            try{
+
+                teamPlayers[i] = players.get(playerIndex);
+                players.remove(playerIndex);
+            }catch(IndexOutOfBoundsException ie){
+                throw new PlayerDatabaseException("Not enough players in database for the teams requested.");
+            }
         }
 
         return teamPlayers;
