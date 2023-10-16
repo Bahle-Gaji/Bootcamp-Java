@@ -9,6 +9,8 @@ import java.time.LocalDateTime;
 import java.time.Period;
 import java.util.*;
 
+import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
+
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
 
 /**
@@ -24,17 +26,21 @@ public class League {
 
         League theLeague = new League();
 
-        Team[] theTeams = theLeague.createTeams("The Robins,The Crows,The Swallows", 3);
-        Game[] theGames = theLeague.createGames(theTeams);
+        try{
+            Team[] theTeams = theLeague.createTeams("The Robins,The Crows,The Swallows,The Owls", 11);
+            Game[] theGames = theLeague.createGames(theTeams);
 
-        System.out.println(theLeague.getLeagueAnnouncement(theGames));
+            System.out.println(theLeague.getLeagueAnnouncement(theGames));
 
-        for (Game currGame : theGames) {
-            currGame.playGame();
-            System.out.println(currGame.getDescription());
+            for (Game currGame : theGames) {
+                currGame.playGame();
+                System.out.println(currGame.getDescription());
+            }
+            theLeague.showBestTeam(theTeams);
+            theLeague.showBestPlayers(theTeams);
+        }catch(Exception e){
+            e.printStackTrace(System.err);
         }
-        theLeague.showBestTeam(theTeams);
-        theLeague.showBestPlayers(theTeams);
 
     }
 
@@ -94,9 +100,7 @@ public class League {
             thePlayers.addAll(Arrays.asList(currTeam.getPlayerArray()));
         }
         Collections.sort(thePlayers,
-                (p1, p2) -> Double.valueOf(p2.getGoalsScored()).compareTo
-                    (Double.valueOf(p1.getGoalsScored()))
-                );
+                (p1, p2) -> Double.valueOf(p2.getGoalsScored()).compareTo(Double.valueOf(p1.getGoalsScored())));
 
         System.out.println("\n\nBest Players");
 
