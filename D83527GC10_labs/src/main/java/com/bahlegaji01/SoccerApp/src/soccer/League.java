@@ -12,6 +12,7 @@ import java.util.*;
 import javax.swing.plaf.basic.BasicInternalFrameTitlePane.SystemMenuBar;
 
 import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabase;
+import com.bahlegaji01.SoccerApp.src.utility.PlayerDatabaseException;
 
 /**
  *
@@ -44,7 +45,7 @@ public class League {
 
     }
 
-    public Team[] createTeams(String teamNames, int teamSize) {
+    public Team[] createTeams(String teamNames, int teamSize) throws PlayerDatabaseException {
         PlayerDatabase playerDB = new PlayerDatabase();
         StringTokenizer teamNameTokens = new StringTokenizer(teamNames, ",");
         Team[] theTeams = new Team[teamNameTokens.countTokens()];
