@@ -1,4 +1,4 @@
-package Book3;
+package Book3.chapter7;
 
 public class AnonClass {
     public static void main(String[] args) {
