@@ -1,4 +1,4 @@
-package com.gmail.bahlegaji01;
+package Book4.chapter5;
 import java.util.*;
 
 public class GenStack<E> {
