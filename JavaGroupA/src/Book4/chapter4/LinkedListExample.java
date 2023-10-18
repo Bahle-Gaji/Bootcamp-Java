@@ -20,6 +20,17 @@ public class LinkedListExample {
 //            System.out.println(s);
 //        }
 
+        LinkedList<String> officers2 = (LinkedList<String>) officers.clone();
+        officers2.remove(2);
+        System.out.println("Shawn should be removed: ");
+        System.out.println(officers2);
+
+        officers.clear();
+        officers2.clear();
+
+        System.out.println("Now there should be no lists:");
+        System.out.println(officers);
+        System.out.println(officers2);
     }
 
 }
