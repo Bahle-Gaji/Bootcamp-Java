@@ -12,10 +12,13 @@ public class LinkedListExample {
         officers.add("Houlihan");
         officers.add("Pierce");
         officers.add("McIntyre");
-
-        for(String s : officers){
-            System.out.println(s);
-        }
+        System.out.println(officers);
+        officers.set(2, "Shawn@3rdPlace");
+        System.out.println("Houlihan Should be replaced:");
+        System.out.println(officers);
+//        for(String s : officers){
+//            System.out.println(s);
+//        }
 
     }
 
