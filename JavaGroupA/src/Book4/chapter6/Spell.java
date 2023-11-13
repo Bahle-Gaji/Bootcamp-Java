@@ -22,6 +22,8 @@ public class Spell {
         for(Spell spell : spells){
             System.out.println(spell.name);
         }   //Printing each spell on the console using for loop
+
+        spells.stream().forEach(s -> System.out.println(s)); // Printing each spell on console using stream
     }
 
     public Spell(String spellName, SpellType spellType, String spellDescription){
