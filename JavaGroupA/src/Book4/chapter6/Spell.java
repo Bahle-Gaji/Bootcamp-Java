@@ -13,12 +13,12 @@ public class Spell {
 
     public static void main(String[] args) {
         ArrayList<Spell> spells = new ArrayList<>();
-        spells.add(new Spell("Aparecium", SpellType.SPELL, "Makes invisible ink appear.",15));
-        spells.add(new Spell("Avis", SpellType.SPELL, "Launches birds from your wand.",10));
-        spells.add(new Spell("Engorgio", SpellType.CHARM, "Enlarges something.",12));
-        spells.add(new Spell("Fidelius", SpellType.CHARM, "Hides a secret within someone.",10));
-        spells.add(new Spell("Finite Incatatum", Spell.SpellType.SPELL, "Stops all current spells.",15));
-        spells.add(new Spell("Locomotor Mortis", Spell.SpellType.CURSE, "Locks an opponent's legs.",15));
+        spells.add(new Spell("Aparecium", SpellType.SPELL, "Makes invisible ink appear.", 15));
+        spells.add(new Spell("Avis", SpellType.SPELL, "Launches birds from your wand.", 10));
+        spells.add(new Spell("Engorgio", SpellType.CHARM, "Enlarges something.", 12));
+        spells.add(new Spell("Fidelius", SpellType.CHARM, "Hides a secret within someone.", 10));
+        spells.add(new Spell("Finite Incatatum", Spell.SpellType.SPELL, "Stops all current spells.", 15));
+        spells.add(new Spell("Locomotor Mortis", Spell.SpellType.CURSE, "Locks an opponent's legs.", 15));
 
         //Printing each spell on the console using for loop
 //        for(Spell spell : spells){
@@ -36,20 +36,25 @@ public class Spell {
 //        }
 
         //Listing out SPELLS using streams
-        spells.stream()
-                .filter(s -> s.type == Spell.SpellType.SPELL)
-                .forEach(s -> System.out.println(s));
+//        spells.stream()
+//                .filter(s -> s.type == Spell.SpellType.SPELL)
+//                .forEach(s -> System.out.println(s));
+
+        double total = spells.stream()
+                .mapToDouble(s -> s.price)
+                .sum();
+        System.out.println("Total is: " + total);
 
     }
 
-    public Spell(String spellName, SpellType spellType, String spellDescription, int price){
+    public Spell(String spellName, SpellType spellType, String spellDescription, int price) {
         this.name = spellName;
         this.type = spellType;
         this.description = spellDescription;
         this.price = price;
     }
 
-    public String toString(){
+    public String toString() {
         return name;
     }
 }
